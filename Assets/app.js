@@ -51,7 +51,7 @@
   // console.log(newTrain.time);
   // console.log(newTrain.freq);
 
-  alert("THATS RIGHT! YOU JUST ADDED A TRAIN TO THE MF SCEDULE! DYNAMICALLY! LIKE A BOSS! WANA ADD ANOTHERE ONE? GO AHEAD! ADD 100 TRAINS. DO IT. ");
+  alert("Your train has been added!");
 
 
   //Clears text boxes after alert
@@ -78,13 +78,15 @@ database.ref().on("child_added", function(childSnapshot){
   console.log(trainFreq);
 
   // Assumptions: Frequency will be user imput the imput for frequency
-  var tFrequency = "#freq-input";
+  var tFrequency = $("#freq-input");
 
   // the first time will be the user imput for the time
-  var firstTime = "#time-input";
+  var firstTime = $("#time-input");
 
-  // First time is the user imput for time pushed back to 1 year
+  // First time is the user input for time pushed back to 1 year
   var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+  
+  console.log("firstTimeConverted: "+ firstTimeConverted)
 
 
   var currentTime = moment()
@@ -118,4 +120,4 @@ var newRow = $("<tr>").append(
 //Append thenew row to the table
 $("#train-schedule > tbody").append(newRow);
 
-});
+});         
