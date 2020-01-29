@@ -1,2 +1,6 @@
 # Train-Scheduler
-Firebase Project
+
+Train schedule for utiliaizng firebase. 
+
+
+
